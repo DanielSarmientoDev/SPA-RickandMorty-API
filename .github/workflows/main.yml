@@ -22,25 +22,13 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-      - name: Twilio SMS
-        uses: twilio-labs/actions-sms@v1
-        with:
-          fromPhoneNumber: +573223685793
-          toPhoneNumber: ${{secrets.PAGE_NUMBER}}
-          message: "example send message phone"
-        env:
-          TWILIO_ACCOUNT_SID: ${{TWILIO_ACCOUNT_SID.TWILIO_ACCOUNT_SID}}
-          TWILIO_API_KEY: ${{TWILIO_ACCOUNT_SID.TWILIO_API_KEY}}
-          TWILIO_API_SECRET: ${{TWILIO_ACCOUNT_SID.TWILIO_API_KEY}}
+     - name: 'Sending SMS Notification'
+       uses: twilio-labs/actions-sms@v1
+       with:
+          fromPhoneNumber: '+1(201)552-4933'
+          toPhoneNumber: '+573223685793'
+          message: 'Hello from Twilio'
+       env:
+          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+          TWILIO_API_KEY: ${{ secrets.TWILIO_API_KEY }}
+          TWILIO_API_SECRET: ${{ secrets.TWILIO_API_SECRET }}
