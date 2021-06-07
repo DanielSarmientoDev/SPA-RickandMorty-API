@@ -34,3 +34,13 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      - name: Twilio SMS
+        uses: twilio-labs/actions-sms@v1
+        with:
+          fromPhoneNumber: +573223685793
+          toPhoneNumber: ${{secrets.PAGE_NUMBER}}
+          message: "example send message phone"
+        env:
+          TWILIO_ACCOUNT_SID: ${{secrets.TWILIO_ACCOUNT_SID}}
+          TWILIO_API_KEY: ${{secrets.TWILIO_ACCOUNT_SID}}
+          TWILIO_API_SECRET: ${{secrets.TWILIO_ACCOUNT_SID}}
