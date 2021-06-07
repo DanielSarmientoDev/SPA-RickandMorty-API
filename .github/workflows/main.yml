@@ -41,6 +41,6 @@ jobs:
           toPhoneNumber: ${{secrets.PAGE_NUMBER}}
           message: "example send message phone"
         env:
-          TWILIO_ACCOUNT_SID: ${{secrets.TWILIO_ACCOUNT_SID}}
-          TWILIO_API_KEY: ${{secrets.TWILIO_API_KEY}}
-          TWILIO_API_SECRET: ${{secrets.TWILIO_API_KEY}}
+          TWILIO_ACCOUNT_SID: ${{TWILIO_ACCOUNT_SID.TWILIO_ACCOUNT_SID}}
+          TWILIO_API_KEY: ${{TWILIO_ACCOUNT_SID.TWILIO_API_KEY}}
+          TWILIO_API_SECRET: ${{TWILIO_ACCOUNT_SID.TWILIO_API_KEY}}
